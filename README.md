@@ -1,4 +1,14 @@
 # **Consignes TP séminaire ROS** *(jeudi 11 février 2020)*
+
+## Configuration requise :
+
+- Ubuntu 16.04 LTS
+- ROS Kinetic
+- Catkin tools *(préférable)*
+- Visual Studio Code *(préférable)*
+
+--------------------
+
 ## I. Création du modèle URDF
 Utilisez les parties dans le dossier meshes pour créer votre digital twin.
 
@@ -49,9 +59,15 @@ Souscrire à winchHeight et publier la donnée dans plate_joint_states
 
 ## Tips :
 
-Si vous utilisez Visual Studio Code il existe une extension Preview URDF trés pratique pour la visualisation du model en live.
+Si vous utilisez Visual Studio Code il existe une extension Preview URDF trés pratique pour la visualisation du robot en live.
 
 ## Commandes utiles :
+
+Compiler les programmes du package
+
+    cd catkin_ws
+    catkin build
+    source devel/setup.bash
 
 Lancer un launch
 
