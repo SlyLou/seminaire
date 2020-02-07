@@ -4,10 +4,48 @@
 #include <tf/transform_broadcaster.h>
 #include "seminaire/winch.h"
 #include <sensor_msgs/JointState.h>
+#define MAX_PLATE 1.071
+#define MIN_PLATE 0.695
+
+using namespace std;
+sensor_msgs::JointState joint_state;
+ros::Publisher plate_pub;
 
 
-int main(int argc, char *argv[])
-{
+void winchCallback(const seminaire::winch& msg) 
+  {
+    float plate_height;
+    
+    if (msg.height > MAX_PLATE)
+    {
+      plate_height = (MAX_PLATE - MIN_PLATE);
+    }
+    else if (msg.height < MIN_PLATE)
+    {
+      plate_height = 0;
+    }
+    else
+    {
+      plate_height = (msg.height - MIN_PLATE);
+    }
 
-    return 0;
+    joint_state.position[0]=plate_height;
+    plate_pub.publish(joint_state);
+  };
+
+int main(int argc, char** argv){
+  ros::init(argc, argv, "robot_tf_publisher_pieces");
+  ros::NodeHandle n;
+  ros::Subscriber sub;
+  
+
+
+  joint_state.name.push_back("plate");
+  joint_state.position.push_back(0);
+
+
+  sub = n.subscribe("Heron01/winch_Height", 10, winchCallback);
+  plate_pub = n.advertise<sensor_msgs::JointState>("Heron01/plate_joint_states",10);
+
+  ros::spin();
 }
