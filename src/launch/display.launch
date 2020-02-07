@@ -9,7 +9,7 @@
       default="False" />
     <param
       name="robot_description"
-      textfile="$(find heron)/urdf/heron_urdf.urdf" />
+      textfile="$(find seminaire)/urdf/heron_urdf.urdf" />
     <param name="tf_prefix" value="$(optenv HERON_TF Heron01TF)" />
     <param
       name="use_gui"
@@ -24,7 +24,7 @@
       <param name="tf_prefix" value="$(optenv HERON_TF Heron01TF)" />
     </node>
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find heron)/urdf.rviz" >
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find seminaire)/urdf.rviz" >
       <remap from="/initialpose" to="initialpose"/>
       <remap from="/move_base_simple/goal" to="move_base_simple/goal"/>
     </node>

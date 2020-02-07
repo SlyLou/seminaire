@@ -32,10 +32,7 @@ include_directories(include
   ${catkin_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
   ${GSTREAMER_INCLUDE_DIRS})
-
-add_executable(odom src/nodes/odom.cpp)
-target_link_libraries(odom ${catkin_LIBRARIES})
-add_dependencies(odom seminaire_generate_messages_cpp)
+  
 
 add_executable(plate_DigitalTwin src/nodes/plate_DigitalTwin.cpp)
 target_link_libraries(plate_DigitalTwin ${catkin_LIBRARIES})
