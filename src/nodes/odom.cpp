@@ -20,7 +20,7 @@ class ProcessOdom
     Utilisez cette classe pour :
      - souscrire au topic des encodeurs
      - calculer la vitesse puis la distance parcourue par le robot
-     - broadcatser la tf odom et publier sur le topic odom
+     - publier la tf odom et publier sur le topic odom
      */
 
 };

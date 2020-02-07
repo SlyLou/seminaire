@@ -1,1 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
+<robot name="heron">
+    <link name="base_footprint">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>
+            </geometry>
+        </inertial>
+    </link>
+    <joint name="base_footprint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    </joint>
+
+    <link name="base_link">
+        <inertial>
+            <origin xyz="-0.15 0.025 0.0" rpy="0 0 1.57079"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.15 0.025 0.0" rpy="0 0 1.57079"/>
+            <geometry>
+                <mesh filename="package://seminaire/meshes/base_link.STL"/>
+                <material>
+                    <color rgba="1 0.3 0.5 0.5"/>
+                </material>
+            </geometry>
+        </visual>
+    </link>
+
+
+    <link name="wheel_fl">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://seminaire/meshes/wheel_FL.dae" scale="0.4 0.5 0.4"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="wheel_fl" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_fl"/>
+        <origin xyz="0.2 0.216235 -0.06" rpy="0 0 0"/>
+        <axis xyz="0 1 0" />
+        <limit effort="9.1201845" velocity="8.79645942"/>
+    </joint>
+
+    <link name="wheel_fr">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://seminaire/meshes/wheel_FR.dae" scale="0.4 0.5 0.4"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="wheel_fr" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_fr"/>
+        <origin xyz="0.2 -0.216235 -0.06" rpy="0 0 0"/>
+        <axis xyz="0 1 0" />
+        <limit effort="9.1201845" velocity="8.79645942"/>
+    </joint>
+
+    <link name="wheel_bl">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://seminaire/meshes/wheel_BL.dae" scale="0.4 0.5 0.4"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="wheel_bl" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_bl"/>
+        <origin xyz="-0.2 0.216235 -0.06" rpy="0 0 0"/>
+        <axis xyz="0 1 0" />
+        <limit effort="9.1201845" velocity="8.79645942"/>
+    </joint>
+
+    <link name="wheel_br">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://seminaire/meshes/wheel_BR.dae" scale="0.4 0.5 0.4"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="wheel_br" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_br"/>
+        <origin xyz="-0.2 -0.216235 -0.06" rpy="0 0 0"/>
+        <axis xyz="0 1 0" />
+        <limit effort="9.1201845" velocity="8.79645942"/>
+    </joint>
+
+
+    <link name="support">
+        <inertial>
+            <origin xyz="-0.015 -0.19 -0.1" rpy="1.5707963267949 0 1.5707963267949"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.015 -0.19 -0.1" rpy="1.5707963267949 0 1.5707963267949"/>
+            <geometry>
+                <mesh filename="package://seminaire/meshes/support.STL"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="support" type="fixed">
+        <parent link="base_link"/>
+        <child link="support"/>
+        <origin xyz="-0.3 0 0" rpy="0 0 0"/>
+    </joint>
+
+
+    <link name="plate">
+        <inertial>
+            <origin xyz="-0.33 -0.25 -0.1" rpy="1.5707963267949 0 1.5707963267949"/>
+        </inertial>
+        <visual>
+            <origin xyz="-0.33 -0.25 -0.1" rpy="1.5707963267949 0 1.5707963267949"/>
+            <geometry>
+                <mesh filename="package://seminaire/meshes/plate.STL"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="plate" type="prismatic">
+        <parent link="base_link"/>
+        <child link="plate"/>
+        <origin xyz="-0.32 0 0.13" rpy="0 0 0"/>
+        <axis xyz="0 0 1" />
+        <limit effort="147" lower="0.0" upper="0.386" velocity="0.039"/>
+    </joint>
+
+
+    <link name="custom">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://seminaire/meshes/Tunning/Rubber_Duck.stl" scale="10 10 10"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="custom" type="fixed">
+        <parent link="base_link"/>
+        <child link="custom"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+</robot>
