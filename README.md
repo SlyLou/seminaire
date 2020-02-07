@@ -47,16 +47,13 @@ Utilisez les parties dans le dossier meshes pour créer votre digital twin.
 
 ------------------------------
 
-## II. Faire bouger le Digital Twin
+## II. Création de nodes
 
-### **1)** Créer le node qui calcule l'odométrie du robot et fait bouger le Digital twin
+### **1)** Créer le node de commande par manette 
 
-Souscrire à sensor_encs le topic des encodeurs (attention on utilise un message custom)
-
-S'inspirer des papier pour les équations : 
-- équations de base https://research.ijcaonline.org/volume113/number3/pxc3901586.pdf 
-        
-- équations avec prise en compte d'un "rayon variable" https://www.researchgate.net/publication/326283867_Influence_of_mecanum_wheels_construction_on_accuracy_of_the_omnidirectional_platform_navigation_on_exanple_of_KUKA_youBot_robot
+- Souscrire au topic *joy* pour récupérer les données de la manette.
+- Transformer ces données en commandes de vitesse pour le robot et son plateau.
+- Publier respectivement sur les topics cmd_vel et cmd_vel_winch.
 
 
 ### **2)** Créer le node pour faire bouger le plateau du Digital twin
