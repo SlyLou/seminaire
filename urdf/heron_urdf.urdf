@@ -1,1 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="heron">
+
+    <link name="base_link">
+        <inertial>
+
+            <mass value="25"/>
+            <inertia
+            ixx="4.73345232681242"
+            ixy="-6.13913566072873E-06"
+            ixz="-1.89872416704455E-05"
+            iyy="6.95202353462315"
+            iyz="-8.07624704791103E-06"
+            izz="3.18752499734018" />
+            </inertial>
+
+    </link>
+
+
+    <link name="wheel_fl">
+        <inertial>
+
+            <mass value="0.389968906998643" />
+            <inertia
+            ixx="0.000322138046158454"
+            ixy="-6.65852858947508E-37"
+            ixz="-1.86618052242594E-37"
+            iyy="0.00048299257130799"
+            iyz="5.80382085092595E-22"
+            izz="0.000322138046158454" />
+        </inertial>
+
+    </link>
+
+
+    <link name="wheel_fr">
+        <inertial>
+
+            <mass value="0.389968906998643" />
+            <inertia
+            ixx="0.000322138046158454"
+            ixy="-6.65852858947508E-37"
+            ixz="-1.86618052242594E-37"
+            iyy="0.00048299257130799"
+            iyz="5.80382085092595E-22"
+            izz="0.000322138046158454" />
+        </inertial>
+
+    </link>
+
+
+    <link name="wheel_bl">
+        <inertial>
+
+            <mass value="0.389968906998643" />
+            <inertia
+            ixx="0.000322138046158454"
+            ixy="-6.65852858947508E-37"
+            ixz="-1.86618052242594E-37"
+            iyy="0.00048299257130799"
+            iyz="5.80382085092595E-22"
+            izz="0.000322138046158454" />
+        </inertial>
+
+    </link>
+
+
+    <link name="wheel_br">
+        <inertial>
+
+            <mass value="0.389968906998643" />
+            <inertia
+            ixx="0.000322138046158454"
+            ixy="-6.65852858947508E-37"
+            ixz="-1.86618052242594E-37"
+            iyy="0.00048299257130799"
+            iyz="5.80382085092595E-22"
+            izz="0.000322138046158454" />
+        </inertial>
+
+    </link>
+
+
+
+    <link name="support">
+        <inertial>
+
+            <mass value="0.389968906998643" />
+            <inertia
+            ixx="0.20"
+            ixy="0"
+            ixz="0"
+            iyy="0.10"
+            iyz="-0.08"
+            izz="0.14" />
+        </inertial>
+
+    </link>
+
+
+
+    <link name="plate">
+        <inertial>
+
+            <mass value="0.389968906998643" />
+            <inertia
+            ixx="1.47"
+            ixy="-0.09"
+            ixz="-0.31"
+            iyy="1.46"
+            iyz="0.39"
+            izz="0.35" /> 
+        </inertial>
+
+    </link>
+
+
+</robot>

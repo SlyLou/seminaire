@@ -17,7 +17,7 @@ Utilisez les parties dans le dossier meshes pour créer votre digital twin.
 
     link (que inertial pas de visual) : xyz="0 0 0" rpy="0 0 0"
     
-    joint : xyz="0 0 0.1" rpy="0 0 0" / parent link="base_footprint" / child link="base_link"
+    joint : xyz="0 0 0.1" rpy="0 0 0" 
         
 - **Base :**
 
@@ -27,19 +27,19 @@ Utilisez les parties dans le dossier meshes pour créer votre digital twin.
 
     link : xyz="0 0 0" rpy="0 0 0"
 
-    joint : xyz="+-0.2 +-0.216235 -0.06" rpy="0 0 0" / parent link="base_link" / child link="wheel_XX" / limit effort="9.1201845" velocity="8.79645942"
+    joint : xyz="+-0.2 +-0.216235 -0.06" rpy="0 0 0" / limit effort="9.1201845" velocity="8.79645942"
 
 - **Support plateau :** 
 
     link : xyz="-0.015 -0.19 -0.1" rpy="1.5707963267949 0 1.5707963267949"
 
-    joint : xyz="-0.3 0 0" rpy="0 0 0" / parent link="base_link" / child link="support"
+    joint : xyz="-0.3 0 0" rpy="0 0 0" 
 
 - **Plateau :**
 
     link : xyz="-0.33 -0.25 -0.1" rpy="1.5707963267949 0 1.5707963267949" 
     
-    joint : xyz="-0.32 0 0.13" rpy="0 0 0" / parent link="base_link" / child link="plate" / limit effort="147" lower="0.0" upper="0.386" velocity="0.039"
+    joint : xyz="-0.32 0 0.13" rpy="0 0 0" / limit effort="147" lower="0.0" upper="0.386" velocity="0.039"
 
 
 
